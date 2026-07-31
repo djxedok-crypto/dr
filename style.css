@@ -1,0 +1,317 @@
+/* ==========================================================================
+   Стилизация и Цветовая Палитра: Нежно-бежевый, Песочный, Золотистый, Коричневый
+   ========================================================================== */
+
+:root {
+    --bg-cream: #FDFBF7;
+    --card-bg: #FCF8F2;
+    --primary-brown: #5C3A21;
+    --accent-gold: #C59B27;
+    --light-gold: #E6CA65;
+    --text-dark: #3D2615;
+    --text-muted: #7A5C45;
+    --border-color: #DBC8AC;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-cream);
+    background-image: radial-gradient(#E8DEC8 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 10px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фоновый холст частичек */
+#particlesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Карточка открытки */
+.card-container {
+    position: relative;
+    z-index: 1;
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 580px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(92, 58, 33, 0.12),
+                0 5px 15px rgba(0, 0, 0, 0.04);
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+}
+
+.card-border {
+    border: 2px solid var(--border-color);
+    outline: 1px solid var(--border-color);
+    outline-offset: -6px;
+    padding: 35px 25px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Угловой декор */
+.corner-leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-gold);
+    pointer-events: none;
+}
+.top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+/* Шапка */
+.sub-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: var(--primary-brown);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.greeting {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+.blessing {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Персонаж Симба */
+.simba-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto 5px;
+    filter: drop-shadow(0 6px 8px rgba(92, 58, 33, 0.15));
+    animation: floatSimba 4s ease-in-out infinite;
+}
+
+.simba-svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes floatSimba {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* Главное имя */
+.hero-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.2rem;
+    color: var(--primary-brown);
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 5px 0;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+.event-title h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* Тексты */
+.description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.wish-text {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 440px;
+    margin: 0 auto 20px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: var(--border-color);
+}
+
+.heart-icon {
+    color: var(--accent-gold);
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+/* Блоки с деталями */
+.info-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-box {
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+.info-item .label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.info-item .value {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--primary-brown);
+    line-height: 1.3;
+}
+
+/* Подвал и кнопка */
+.footer {
+    margin-top: 25px;
+}
+
+.closing-quote {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-bottom: 25px;
+}
+
+.signature span {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.signature strong {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--primary-brown);
+    letter-spacing: 1px;
+}
+
+.interactive-btn {
+    background: linear-gradient(135deg, var(--accent-gold), var(--primary-brown));
+    color: #FFF;
+    border: none;
+    padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(92, 58, 33, 0.25);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(92, 58, 33, 0.35);
+}
+
+.interactive-btn:active {
+    transform: translateY(1px);
+}
+
+/* CSS-Анимации */
+.animate-fade, .animate-pop, .animate-scale, .animate-up {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.animate-fade { animation-name: fadeIn; animation-duration: 1.2s; }
+.animate-pop { animation-name: popIn; animation-duration: 1s; }
+.animate-scale { animation-name: scaleIn; animation-duration: 1.2s; }
+.animate-up { animation-name: slideUp; animation-duration: 1s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 480px) {
+    .card-border { padding: 25px 15px; }
+    .hero-name { font-size: 3.4rem; }
+    .sub-title { font-size: 1.2rem; }
+    .greeting { font-size: 1.5rem; }
+    .info-grid { flex-direction: column; gap: 18px; }
+}

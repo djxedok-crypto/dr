@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taklifnoma — Abu-Bakr 1 Tosh To'yi</title>
+    
+    <!-- Подключение элегантных шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Холст для анимации падающих золотых частиц -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <div class="card-container">
+        <div class="card-border">
+            
+            <!-- Декоративные растительные орнаменты по углам -->
+            <div class="corner-leaf top-left"></div>
+            <div class="corner-leaf top-right"></div>
+            <div class="corner-leaf bottom-left"></div>
+            <div class="corner-leaf bottom-right"></div>
+
+            <header class="header">
+                <span class="sub-title animate-fade">TAKLIFNOMA</span>
+                <p class="greeting animate-fade">Assalomu alaykum va rahmatullohi va barokatuh!</p>
+                <p class="blessing animate-fade">Alloh taoloning cheksiz marhamati ila aziz nevaramizning muborak</p>
+            </header>
+
+            <!-- Симба SVG (Векторный персонаж King Lion) -->
+            <div class="simba-wrapper animate-pop">
+                <svg class="simba-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Simba">
+                        <!-- Уши -->
+                        <path d="M 50 75 C 20 40, 20 90, 60 95 Z" fill="#D98A2B" stroke="#8C4A11" stroke-width="3"/>
+                        <path d="M 53 78 C 30 50, 30 85, 60 92 Z" fill="#E8B074"/>
+                        <path d="M 150 75 C 180 40, 180 90, 140 95 Z" fill="#D98A2B" stroke="#8C4A11" stroke-width="3"/>
+                        <path d="M 147 78 C 170 50, 170 85, 140 92 Z" fill="#E8B074"/>
+                        
+                        <!-- Голова -->
+                        <ellipse cx="100" cy="110" rx="50" ry="42" fill="#EFA23B" stroke="#8C4A11" stroke-width="3"/>
+                        <!-- Чубчик -->
+                        <path d="M 90 70 Q 100 50 102 68 Q 112 55 110 70 Z" fill="#D98A2B"/>
+                        
+                        <!-- Мордочка -->
+                        <ellipse cx="100" cy="120" rx="26" ry="20" fill="#FBF0D9"/>
+                        <path d="M 92 110 Q 100 105 108 110 Q 100 120 92 110 Z" fill="#C45A5A"/>
+                        
+                        <!-- Глаза -->
+                        <ellipse cx="80" cy="98" rx="8" ry="11" fill="#FFFFFF" stroke="#8C4A11" stroke-width="2"/>
+                        <ellipse cx="120" cy="98" rx="8" ry="11" fill="#FFFFFF" stroke="#8C4A11" stroke-width="2"/>
+                        <circle cx="82" cy="98" r="5" fill="#8C3A00"/>
+                        <circle cx="118" cy="98" r="5" fill="#8C3A00"/>
+                        <circle cx="84" cy="96" r="2" fill="#FFFFFF"/>
+                        <circle cx="120" cy="96" r="2" fill="#FFFFFF"/>
+                        
+                        <!-- Рот и Усики -->
+                        <path d="M 100 118 L 100 125 M 93 125 Q 100 130 107 125" stroke="#8C4A11" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M 70 118 L 50 115 M 70 122 L 52 124 M 130 118 L 150 115 M 130 122 L 148 124" stroke="#8C4A11" stroke-width="1.5" stroke-linecap="round"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Имя виновника торжества -->
+            <div class="name-container animate-scale">
+                <h1 class="hero-name">Abu-Bakr</h1>
+            </div>
+
+            <div class="event-title animate-fade">
+                <h2>1 YOSH TO'YI</h2>
+            </div>
+
+            <!-- Текст приглашения -->
+            <p class="description animate-fade">
+                munosabati bilan o‘tkaziladigan shodiyonaga<br>
+                Siz azizlarni chin qalbdan taklif etamiz.
+            </p>
+
+            <p class="wish-text animate-fade">
+                Bu quvonchli va unutilmas kunda Sizning samimiy ishtirokingiz, ezgu tilak va duolaringiz biz uchun eng qadrli tuhfa bo‘ladi. Tashrifingiz bayramimizga yanada fayz va baraka bag‘ishlaydi.
+            </p>
+
+            <div class="divider">
+                <span class="heart-icon">♥</span>
+            </div>
+
+            <!-- Информационные блоки (Дата, Время, Локация) -->
+            <div class="info-grid">
+                <div class="info-item animate-up">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <span class="label">SANA:</span>
+                    <strong class="value">6-AVGUST<br>2026</strong>
+                </div>
+
+                <div class="info-item animate-up" style="animation-delay: 0.15s;">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <span class="label">VAQTI:</span>
+                    <strong class="value">19:00</strong>
+                </div>
+
+                <div class="info-item animate-up" style="animation-delay: 0.3s;">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <span class="label">MANZIL:</span>
+                    <strong class="value">“POPLAVOK”<br><small>TANTANALAR ZALI</small></strong>
+                </div>
+            </div>
+
+            <!-- Подпись и Интерактивная кнопка -->
+            <footer class="footer animate-fade">
+                <p class="closing-quote">
+                    Aziz mehmonimiz sifatida Sizni va oila a’zolaringizni intiqlik bilan kutib qolamiz.
+                </p>
+                
+                <div class="signature">
+                    <span>HURMAT BILAN,</span>
+                    <strong>ABU-BAKRNING OILASI</strong>
+                </div>
+
+                <button class="interactive-btn" id="confirmBtn">
+                    <span>Tashrifni tasdiqlash</span>
+                </button>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

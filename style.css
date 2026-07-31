@@ -307,11 +307,20 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Адаптив для мобильных устройств */
+/* Адаптив для мобильных устройств (с добавленным центрированием) */
 @media (max-width: 480px) {
     .card-border { padding: 25px 15px; }
     .hero-name { font-size: 3.4rem; }
     .sub-title { font-size: 1.2rem; }
     .greeting { font-size: 1.5rem; }
-    .info-grid { flex-direction: column; gap: 18px; }
+    
+    .info-grid { 
+        flex-direction: column; 
+        align-items: center; /* Центрирование элементов */
+        gap: 20px; 
+    }
+    
+    .info-item {
+        text-align: center; /* Выравнивание текста по центру */
+    }
 }
